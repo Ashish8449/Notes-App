@@ -1,7 +1,4 @@
 @media only screen and (max-width: 380px) {
-  body {
-    /* background-color: lightblue; */
-  }
   .main {
     width: 300px !important;
   }
