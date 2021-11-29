@@ -20,7 +20,7 @@ let userData = [
     notes: [],
   },
 ];
-// console.log(userData);
+console.log(userData);
 
 /*=======================================================
                          Variabels: 
@@ -34,8 +34,8 @@ const loginDiv = document.querySelector(".loginDiv");
 const logOutBtn = document.querySelector(".LogOut");
 
 const addBtn = document.querySelector(".AddNotes");
-
-userData = JSON.parse(localStorage.getItem("userData"));
+if (JSON.parse(localStorage.getItem("userData")))
+  userData = JSON.parse(localStorage.getItem("userData"));
 console.log(userData);
 
 /* ====================================================================
