@@ -12,7 +12,10 @@ let userData = [
   {
     UserName: "Sharma ji",
     Password: "143",
-    notes: ["ghghg"],
+    notes: [
+      "Ajj aaye hai is jahan main mahobbat hi karle, kya pta pagli hum kal kisi or ke na ho jaye !",
+      "Koshish Koi Aapse Na Ruthe,Zindagi Me Apno Ka Sath Na Chhute,Dosti Koi Bhi Ho Use Aisa Nibhao, Ki Us Dosti Ki Dor Zindagi Bhar Na Toote.",
+    ],
   },
   {
     UserName: "as",
