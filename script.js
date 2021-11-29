@@ -1,23 +1,57 @@
+let userData = [
+  {
+    UserName: "Ajay",
+    Password: "aa",
+    notes: [" djfkdjfdkfjdkfjdkf"],
+  },
+  {
+    UserName: "ashish",
+    Password: "1234",
+    notes: [],
+  },
+  {
+    UserName: "Sharma ji",
+    Password: "143",
+    notes: ["ghghg"],
+  },
+  {
+    UserName: "as",
+    Password: "aa",
+    notes: [],
+  },
+];
+// console.log(userData);
+
 /*=======================================================
                          Variabels: 
 =======================================================*/
+let index = 0;
+const loginBtn = document.querySelector("#Login");
+const submitBtn = document.querySelector("#SingUP");
+const UserName = document.querySelector("#UserName");
+const Password = document.querySelector("#Password");
+const loginDiv = document.querySelector(".loginDiv");
+const logOutBtn = document.querySelector(".LogOut");
 
 const addBtn = document.querySelector(".AddNotes");
-console.log(addBtn);
-const notes = JSON.parse(localStorage.getItem("notes"));
+
+userData = JSON.parse(localStorage.getItem("userData"));
+console.log(userData);
 
 /* ====================================================================
 
                  Data from local storage
 
 ====================================================================*/
-if (notes) {
-  notes.forEach((note) => {
-    console.log(note);
-    addNewNote(note);
-  });
+function dataFromlocal(notesPrint = notes[0].notes) {
+  if (notesPrint) {
+    notesPrint.forEach((note) => {
+      console.log(note);
+      addNewNote(note);
+    });
+  }
 }
-
+// dataFromlocal(userData[0].notes);
 /*=======================================================
                         Functions;
 =======================================================*/
@@ -71,14 +105,49 @@ function addBtnFun() {
 
 function updatLs() {
   const noteText = document.querySelectorAll("textarea");
-  const notes = [];
+  // const notes = [];
+
+  userData[index].notes = [];
   noteText.forEach((note) => {
-    notes.push(note.value);
+    userData[index].notes.push(note.value);
   });
-  localStorage.setItem("notes", JSON.stringify(notes));
+  // console.log(userData[index]);
+  // console.log(userData);
+  // console.log(JSON.stringify(userData));
+  localStorage.setItem("userData", JSON.stringify(userData));
+  console.log(localStorage.getItem("userData"));
 }
 /*=======================================================
                     event listener:
 =======================================================*/
 
 addBtn.addEventListener("click", addBtnFun);
+loginBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  let userName = UserName.value;
+  let password = Password.value;
+  console.log(userName);
+
+  console.log(loginDiv);
+  let tempIndex = 0;
+  let check = 1;
+  userData.forEach((val) => {
+    if (userName == val.UserName && password == val.Password) {
+      index = tempIndex;
+      loginDiv.style.display = "none";
+      console.log("Match");
+      addBtn.classList.toggle("hidden");
+      dataFromlocal(val.notes);
+      check = 0;
+      // logOutBtn.classList.remove("hidden");
+    }
+    tempIndex++;
+  });
+  if (check) alert("wrong user name ");
+});
+
+// logOutBtn.addEventListener("click", () => {
+//   const noteText = document.querySelectorAll("textarea");
+
+// });

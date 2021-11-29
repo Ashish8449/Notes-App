@@ -1,27 +1,18 @@
-@media (max-width: 1024px) {
-  /*about section*/
-}
-
-@media (max-width: 991px) {
-  /*custom classes*/
-}
-
-@media (max-width: 767px) {
-  /*custom classes*/
-  h1 {
-    font-size: 2.8rem;
+@media only screen and (max-width: 380px) {
+  body {
+    /* background-color: lightblue; */
   }
-  h2 {
-    font-size: 2rem;
-    line-height: 2.0625rem;
+  .main {
+    width: 300px !important;
   }
-  .btnBox {
-    margin-top: 10px;
-    /* display: block; */
-    flex-wrap: wrap;
+  textarea {
+    border: 2px solid var(--primary-color);
+    width: 300px;
   }
-  /* footer  */
-}
-@media (max-width: 330px) {
-  /*custom classes*/
+  .note .tools {
+    width: 300px;
+  }
+  .note {
+    margin-left: 14px;
+  }
 }

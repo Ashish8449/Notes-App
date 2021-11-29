@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notes APP</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="responsive.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
       rel="stylesheet"
@@ -21,7 +21,46 @@
   </head>
 
   <body>
-    <button class="AddNotes main-btn">Add notes</button>
+    <div class="loginDiv">
+      <div class="centerDiv">
+        <div>
+          <img src="/img/user_img.png" alt="" width="80" height="80" />
+        </div>
+        <form action="">
+          <ul>
+            <li>
+              <input
+                type="text"
+                name=""
+                id="UserName"
+                placeholder="Enter User Name"
+              />
+            </li>
+            <li>
+              <input
+                type="text"
+                name=""
+                id="Password"
+                placeholder="Enter Password"
+              />
+            </li>
+          </ul>
+          <button
+            class="main-btn"
+            href="#"
+            style="display: inline-block"
+            id="Login"
+          >
+            Login
+          </button>
+          <!-- <button class="main-btn" style="display: inline-block" id="SingUP">
+            Sign Up
+          </button> -->
+        </form>
+      </div>
+    </div>
+    <button class="AddNotes main-btn hidden">Add notes</button>
+    <!-- <button class="LogOut main-btn hidden">Log Out</button> -->
 
     <!-- <div class="note">
       <div class="tools">
