@@ -68,7 +68,7 @@ function dataFromlocal(notesPrint = notes[0].notes) {
 function addNewNote(text = "") {
   const note = document.createElement("div");
   note.classList.add("note");
-  note.innerHTML = ` <div class="note">
+  note.innerHTML = ` <div class="">
   <div class="tools">
     <button class="edit"><i class="fas fa-edit"> </i></button>
     <button class="delete"><i class="fas fa-trash-alt"> </i></button>
@@ -176,13 +176,12 @@ AddNewUserbtn.addEventListener("click", (e) => {
   }
   newUser.UserName = NewUserName.value;
   newUser.Password = NewPassword.value;
-  newUser.notes = [
-    "महफ़िल में रौनक छा गई आपके आने से. आँखों को बहुत सुकून आया, जो आप हमारे द्वार पधारें. आपके आने से मुक्कमल महफिल सजी.",
-  ];
+  newUser.notes = [];
   console.log(newUser);
   index = userData.length;
   userData.push(newUser);
- 
+  NewUserName.value = "";
+  NewPassword.value = "";
   dataFromlocal(userData[index].notes);
 
   formAddUser.classList.add("hidden");

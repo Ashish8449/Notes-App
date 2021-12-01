@@ -42,6 +42,7 @@ body {
   justify-content: center;
   overflow-x: hidden;
   padding: 10px;
+  padding-top: 40px;
 }
 
 /*
@@ -142,10 +143,10 @@ _____________________________________________________*/
   border: 2px solid var(pr);
   border-radius: 0px 0px 10px 10px;
   border: 2px solid var(--primary-color);
-  
+
   word-spacing: 2px;
   margin: auto;
-  margin: 4px, 4px;
+  /* margin: 4px, 4px; */
   padding: 4px;
   width: 400px;
   height: 400px;
