@@ -117,6 +117,8 @@ h5 {
 _____________________________________________________*/
 
 .note {
+  position: relative;
+  right: 8px;
   margin-top: 80px;
   margin-left: 20px;
   margin: 40px auto;

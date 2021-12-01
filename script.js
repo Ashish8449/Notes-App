@@ -68,7 +68,7 @@ function dataFromlocal(notesPrint = notes[0].notes) {
 function addNewNote(text = "") {
   const note = document.createElement("div");
   note.classList.add("note");
-  note.innerHTML = ` <div class="">
+  note.innerHTML = ` 
   <div class="tools">
     <button class="edit"><i class="fas fa-edit"> </i></button>
     <button class="delete"><i class="fas fa-trash-alt"> </i></button>
@@ -77,7 +77,7 @@ function addNewNote(text = "") {
    
   </div>
   <textarea class="${!text ? "" : "hidden"}"" name="" id=""></textarea>
-</div>`;
+`;
   const main = note.querySelector(".main");
   const deleteBtn = note.querySelector(".delete");
   // const notesEle = note.querySelector(".notes");
