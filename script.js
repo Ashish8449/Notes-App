@@ -141,6 +141,9 @@ loginBtn.addEventListener("click", (e) => {
   console.log(loginDiv);
   let tempIndex = 0;
   let check = 1;
+  if (JSON.parse(localStorage.getItem("userData")))
+    userData = JSON.parse(localStorage.getItem("userData"));
+  console.log(userData);
   userData.forEach((val) => {
     if (userName == val.UserName && password == val.Password) {
       index = tempIndex;
@@ -179,8 +182,10 @@ AddNewUserbtn.addEventListener("click", (e) => {
   console.log(newUser);
   index = userData.length;
   userData.push(newUser);
-  addBtn.classList.toggle("hidden");
+ 
   dataFromlocal(userData[index].notes);
-  loginDiv.style.display = "none";
+
+  formAddUser.classList.add("hidden");
+  fromLogin.classList.remove("hidden");
   updatLs();
 });
