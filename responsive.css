@@ -1,13 +1,17 @@
 @media only screen and (max-width: 450px) {
   .main {
     width: 300px !important;
+    margin: auto;
   }
   textarea {
     border: 2px solid var(--primary-color);
     width: 300px;
+    display: block;
+    margin: auto;
   }
   .note .tools {
     width: 300px;
+    margin: auto;
   }
   .note {
     margin-left: 14px;
