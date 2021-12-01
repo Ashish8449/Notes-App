@@ -35,6 +35,12 @@ const UserName = document.querySelector("#UserName");
 const Password = document.querySelector("#Password");
 const loginDiv = document.querySelector(".loginDiv");
 const logOutBtn = document.querySelector(".LogOut");
+const SingUPBtn = document.querySelector("#SingUP");
+const fromLogin = document.querySelector(".fromLogin");
+const formAddUser = document.querySelector(".formAddUser");
+const NewUserName = document.querySelector("#NewUserName");
+const NewPassword = document.querySelector("#NewPassword");
+const AddNewUserbtn = document.querySelector("#AddNewUserbtn");
 
 const addBtn = document.querySelector(".AddNotes");
 if (JSON.parse(localStorage.getItem("userData")))
@@ -149,8 +155,32 @@ loginBtn.addEventListener("click", (e) => {
   });
   if (check) alert("wrong user name & password ");
 });
+/*=============================================================
+                        Add new user
+=============================================================*/
 
-// logOutBtn.addEventListener("click", () => {
-//   const noteText = document.querySelectorAll("textarea");
-
-// });
+SingUPBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  fromLogin.classList.add("hidden");
+  formAddUser.classList.remove("hidden");
+});
+AddNewUserbtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  let newUser = {};
+  if (!(NewUserName.value && NewPassword)) {
+    alert("Enter valid user name and password");
+    return;
+  }
+  newUser.UserName = NewUserName.value;
+  newUser.Password = NewPassword.value;
+  newUser.notes = [
+    "महफ़िल में रौनक छा गई आपके आने से. आँखों को बहुत सुकून आया, जो आप हमारे द्वार पधारें. आपके आने से मुक्कमल महफिल सजी.",
+  ];
+  console.log(newUser);
+  index = userData.length;
+  userData.push(newUser);
+  addBtn.classList.toggle("hidden");
+  dataFromlocal(userData[index].notes);
+  loginDiv.style.display = "none";
+  updatLs();
+});
