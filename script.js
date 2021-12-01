@@ -147,7 +147,7 @@ loginBtn.addEventListener("click", (e) => {
     }
     tempIndex++;
   });
-  if (check) alert("wrong user name ");
+  if (check) alert("wrong user name & password ");
 });
 
 // logOutBtn.addEventListener("click", () => {
