@@ -39,6 +39,7 @@ const NewUserName = document.querySelector("#NewUserName");
 const NewPassword = document.querySelector("#NewPassword");
 const AddNewUserbtn = document.querySelector("#AddNewUserbtn");
 const LogOutBtn = document.querySelector(".LogOut ");
+const notesContainer = document.querySelector(".notesContainer");
 // console.log(logOutBtn);
 const addBtn = document.querySelector(".AddNotes");
 if (JSON.parse(localStorage.getItem("userData")))
@@ -100,7 +101,7 @@ function addNewNote(text = "") {
     main.innerHTML = e.target.value;
     updatLs();
   });
-  document.body.appendChild(note);
+  document.querySelector(".notesContainer").appendChild(note);
 }
 function addBtnFun() {
   console.log("click");
@@ -194,10 +195,21 @@ AddNewUserbtn.addEventListener("click", (e) => {
   updatLs();
 });
 
+/*=======================================================
+             press log out btn
+=======================================================*/
+logOutBtn.addEventListener("click", (e) => {
+  console.log("pressed log out btn");
+  index = null;
+  updatIndexLs();
+  window.location.reload();
+});
 /*==============================================================
                       check log out or not
 ================================================================*/
 if (index) {
+  console.log(index);
+  console.log(userData[index].notes);
   dataFromlocal(userData[index].notes);
 
   loginDiv.style.display = "none";
@@ -208,13 +220,3 @@ if (index) {
   addBtn.style.width = "auto";
   logOutBtn.classList.remove("hidden");
 }
-
-/*=======================================================
-             press log out btn
-=======================================================*/
-logOutBtn.addEventListener("click", (e) => {
-  index = null;
-  updatIndexLs();
-  loginDiv.style.display = "block";
-  addBtn.classList.add("hidden");
-});
