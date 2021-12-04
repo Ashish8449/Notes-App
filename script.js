@@ -25,7 +25,7 @@ console.log(userData);
 /*=======================================================
                          Variabels: 
 =======================================================*/
-let index = 0;
+let index = localStorage.getItem("index");
 const loginBtn = document.querySelector("#Login");
 const submitBtn = document.querySelector("#SingUP");
 const UserName = document.querySelector("#UserName");
@@ -38,7 +38,8 @@ const formAddUser = document.querySelector(".formAddUser");
 const NewUserName = document.querySelector("#NewUserName");
 const NewPassword = document.querySelector("#NewPassword");
 const AddNewUserbtn = document.querySelector("#AddNewUserbtn");
-
+const LogOutBtn = document.querySelector(".LogOut ");
+// console.log(logOutBtn);
 const addBtn = document.querySelector(".AddNotes");
 if (JSON.parse(localStorage.getItem("userData")))
   userData = JSON.parse(localStorage.getItem("userData"));
@@ -57,6 +58,7 @@ function dataFromlocal(notesPrint = notes[0].notes) {
     });
   }
 }
+
 // dataFromlocal(userData[0].notes);
 /*=======================================================
                         Functions;
@@ -109,17 +111,19 @@ function addBtnFun() {
                           local storage
 =================================================================*/
 
+function updatIndexLs() {
+  console.log("update local index");
+  localStorage.setItem("index", index);
+  console.log(localStorage.getItem("index"));
+}
 function updatLs() {
   const noteText = document.querySelectorAll("textarea");
-  // const notes = [];
 
   userData[index].notes = [];
   noteText.forEach((note) => {
     userData[index].notes.push(note.value);
   });
-  // console.log(userData[index]);
-  // console.log(userData);
-  // console.log(JSON.stringify(userData));
+
   localStorage.setItem("userData", JSON.stringify(userData));
   console.log(localStorage.getItem("userData"));
 }
@@ -144,13 +148,16 @@ loginBtn.addEventListener("click", (e) => {
   userData.forEach((val) => {
     if (userName == val.UserName && password == val.Password) {
       index = tempIndex;
+      updatIndexLs();
       loginDiv.style.display = "none";
       console.log("Match");
+      document.querySelector("body").classList.add("bodybg");
+      console.log(document.querySelector("body"));
       addBtn.classList.toggle("hidden");
       addBtn.style.width = "auto";
       dataFromlocal(val.notes);
+      logOutBtn.classList.remove("hidden");
       check = 0;
-      // logOutBtn.classList.remove("hidden");
     }
     tempIndex++;
   });
@@ -185,4 +192,29 @@ AddNewUserbtn.addEventListener("click", (e) => {
   formAddUser.classList.add("hidden");
   fromLogin.classList.remove("hidden");
   updatLs();
+});
+
+/*==============================================================
+                      check log out or not
+================================================================*/
+if (index) {
+  dataFromlocal(userData[index].notes);
+
+  loginDiv.style.display = "none";
+
+  document.querySelector("body").classList.add("bodybg");
+
+  addBtn.classList.remove("hidden");
+  addBtn.style.width = "auto";
+  logOutBtn.classList.remove("hidden");
+}
+
+/*=======================================================
+             press log out btn
+=======================================================*/
+logOutBtn.addEventListener("click", (e) => {
+  index = null;
+  updatIndexLs();
+  loginDiv.style.display = "block";
+  addBtn.classList.add("hidden");
 });

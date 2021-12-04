@@ -1,4 +1,11 @@
 @media only screen and (max-width: 450px) {
+
+  .main-btn {
+    width: 150%;
+    position: relative;
+    left: -20%;
+  }
+
   .main {
     width: 300px !important;
     margin: auto;
@@ -29,14 +36,13 @@
     align-items: center;
   }
   input {
-    position: relative;
-    height: 30px;
-    width: 200px;
     border-radius: 10px;
     border: 2px solid hsl(195, 87%, 41%);
     padding: 5px;
     text-align: center;
-    right: 75%;
-    transform: translate(50%);
+    position: relative;
+    right: 65%;
+    /* transform: translate(50%);
   }
+  
 }

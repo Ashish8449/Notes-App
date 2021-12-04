@@ -41,6 +41,22 @@ body {
   font-weight: 400;
   justify-content: center;
   overflow-x: hidden;
+  padding: 0 40px;
+  /* background: linear-gradient(red, rgb(151, 80, 80)) !important;
+   */
+  background: url(img/woman-792162.jpg) no-repeat;
+  background-size: cover;
+  object-fit: cover;
+}
+.bodybg {
+  background: #94c6c5;
+}
+.LogOut {
+  z-index: 2;
+  width: 100px !important;
+  position: fixed;
+  /* left: 1%; */
+  top: 10px;
 }
 
 /*
@@ -122,8 +138,8 @@ _____________________________________________________*/
   margin-top: 80px;
   margin-left: 20px;
   margin: 40px auto;
-  height: 400px;
-  width: 400px;
+  width: 300px;
+  height: 300px;
 }
 .note .tools {
   margin-top: 60px;
@@ -148,11 +164,15 @@ _____________________________________________________*/
   word-spacing: 2px;
   margin: auto;
   padding: 4px;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: justify;
+  /* background: url(/img/coffee-792113_1920.jpg) no-repeat; */
+  /* object-fit: cover;
+  background-size: cover; */
+  background: #addbdb;
   box-shadow: 1px 1px 18px -3px rgba(0, 0, 0, 0.59);
   -webkit-box-shadow: 1px 1px 18px -3px rgba(0, 0, 0, 0.59);
   -moz-box-shadow: 1px 1px 18px -3px rgba(0, 0, 0, 0.59);
@@ -162,8 +182,8 @@ textarea {
   /* width: 100%;
   height: 100%; */
   border-radius: 0 0 10px 10px;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   overflow-x: hidden;
   overflow-y: auto;
   outline: none;
@@ -171,6 +191,7 @@ textarea {
   box-shadow: 1px 1px 18px -3px rgba(0, 0, 0, 0.59);
   -webkit-box-shadow: 1px 1px 18px -3px rgba(0, 0, 0, 0.59);
   -moz-box-shadow: 1px 1px 18px -3px rgba(0, 0, 0, 0.59);
+  background: transparent;
 }
 .fas {
   cursor: pointer;
@@ -184,6 +205,7 @@ textarea {
 
 .AddNotes,
 .LogOut {
+  z-index: 2;
   position: fixed;
   top: 2rem;
   right: 45%;
@@ -203,14 +225,15 @@ textarea {
 }
 ul li {
   margin: 10px 0;
-  width: 200px;
-  height: 30px;
+  /* width: 200px;
+  height: 30px; */
 }
 input {
+  text-align: center;
   width: 100%;
   height: 100%;
-  position: relative;
-  right: 31%;
+  /* position: relative; */
+  /* right: 31%; */
 }
 
 .centerDiv {
@@ -220,19 +243,21 @@ input {
   box-shadow: 1px 1px 18px -3px rgba(0, 0, 0, 0.59);
   -webkit-box-shadow: 1px 1px 18px -3px rgba(0, 0, 0, 0.59);
   -moz-box-shadow: 1px 1px 18px -3px rgba(0, 0, 0, 0.59);
-  height: 400px;
-  width: 310px;
+  /* height: 400px;
+  width: 310px; */
   text-align: center;
 }
 
 input {
+  display: block;
   margin: auto;
-  height: 30px;
+  height: 45px;
   width: 250px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 2px solid var(--primary-color);
   padding: 5px;
-  text-align: center;
+  /* text-align: center;
+  margin: auto; */
 }
 
 .fa-user {
