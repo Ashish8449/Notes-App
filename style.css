@@ -44,12 +44,12 @@ body {
   padding: 0 40px;
   /* background: linear-gradient(red, rgb(151, 80, 80)) !important;
    */
-  background: url(img/woman-792162.jpg) no-repeat;
+  background: url(img/woman-792162.jpg) no-repeat fixed;
   background-size: cover;
   object-fit: cover;
 }
 .bodybg {
-  background: #94c6c5;
+  /* background: fixed; */
 }
 .LogOut {
   z-index: 2;
@@ -177,10 +177,11 @@ _____________________________________________________*/
   /* background: url(/img/coffee-792113_1920.jpg) no-repeat; */
   /* object-fit: cover;
   background-size: cover; */
-  background: #addbdb;
+  /* background: #addbdb; */
   box-shadow: 1px 1px 18px -3px rgba(0, 0, 0, 0.59);
   -webkit-box-shadow: 1px 1px 18px -3px rgba(0, 0, 0, 0.59);
   -moz-box-shadow: 1px 1px 18px -3px rgba(0, 0, 0, 0.59);
+  padding: 5px 5px;
 }
 textarea {
   border: 2px solid var(--primary-color);
